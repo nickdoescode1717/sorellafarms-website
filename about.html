@@ -18,6 +18,7 @@
         .nav-link.active::after { width: 100%; }
         .btn-elegant { border: 1px solid #9A8467; padding: 12px 32px; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; transition: all 0.4s ease; display: inline-block; }
         .btn-elegant:hover { background-color: #9A8467; color: white; }
+        .team-scroll::-webkit-scrollbar { display: none; }
         #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease, padding 0.3s ease; }
         #mobile-menu { transform: translateX(100%); transition: transform 0.4s ease; }
         #mobile-menu.open { transform: translateX(0); }
@@ -203,20 +204,64 @@
 
 <!-- The Team -->
 <section class="py-24 px-8 md:px-24 bg-[#F4EEE8]">
-    <div class="max-w-4xl mx-auto text-center">
-        <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">The People Behind Sorella</span>
-        <h2 class="text-3xl md:text-4xl serif font-light mt-4 mb-14">Meet the Team</h2>
-        <div class="max-w-md mx-auto space-y-6">
-            <div class="w-24 h-24 rounded-full bg-[#e8e3dc] mx-auto flex items-center justify-center">
-                <i class="ph-thin ph-user text-3xl text-[#9A8467]"></i>
-            </div>
-            <h3 class="text-2xl serif font-light">Hayley</h3>
-            <p class="text-[#9A8467] text-[10px] uppercase tracking-widest font-medium">Wedding & Events Director</p>
-            <p class="text-neutral-500 font-light leading-relaxed">
-                Hayley is the heart of Sorella's wedding team — the person you'll hear from first and the one who will be at the estate on your wedding day. With a deep love for this land and a genuine belief in the power of heartfelt celebrations, she brings warmth and dedication to every couple she works with.
-            </p>
-            <a href="mailto:hayley@sorellafarms.ca" class="text-[10px] uppercase tracking-widest text-[#9A8467] font-semibold border-b border-[#9A8467] pb-1 hover:text-[#867156] transition-colors inline-block">hayley@sorellafarms.ca</a>
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">The People Behind Sorella</span>
+            <h2 class="text-3xl md:text-4xl serif font-light mt-4">Meet the Team</h2>
         </div>
+        <div class="team-scroll flex gap-8 overflow-x-auto pb-6 lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0" style="scrollbar-width: none; -ms-overflow-style: none;">
+
+            <!-- Hayley -->
+            <div class="flex-shrink-0 w-64 lg:w-auto text-center space-y-4 bg-white p-8">
+                <div class="w-20 h-20 rounded-full bg-[#F4EEE8] mx-auto flex items-center justify-center">
+                    <i class="ph-thin ph-user text-2xl text-[#9A8467]"></i>
+                </div>
+                <h3 class="text-xl serif font-light">Hayley</h3>
+                <p class="text-[#9A8467] text-[9px] uppercase tracking-widest font-medium leading-relaxed">Wedding & Events Director</p>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    The heart of the Sorella wedding team — the first voice you'll hear and the steady presence on your wedding day.
+                </p>
+                <a href="mailto:hayley@sorellafarms.ca" class="text-[9px] uppercase tracking-widest text-[#9A8467] font-semibold border-b border-[#9A8467] pb-1 hover:text-[#867156] transition-colors inline-block">hayley@sorellafarms.ca</a>
+            </div>
+
+            <!-- Jason Wilson -->
+            <div class="flex-shrink-0 w-64 lg:w-auto text-center space-y-4 bg-white p-8">
+                <div class="w-20 h-20 rounded-full bg-[#F4EEE8] mx-auto flex items-center justify-center">
+                    <i class="ph-thin ph-user text-2xl text-[#9A8467]"></i>
+                </div>
+                <h3 class="text-xl serif font-light">Jason Wilson</h3>
+                <p class="text-[#9A8467] text-[9px] uppercase tracking-widest font-medium leading-relaxed">Owner & Financial Officer</p>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    The strategic mind behind Sorella's vision, ensuring the estate grows with integrity and purpose for every couple who walks through its gates.
+                </p>
+            </div>
+
+            <!-- Carly Schwenker -->
+            <div class="flex-shrink-0 w-64 lg:w-auto text-center space-y-4 bg-white p-8">
+                <div class="w-20 h-20 rounded-full bg-[#F4EEE8] mx-auto flex items-center justify-center">
+                    <i class="ph-thin ph-user text-2xl text-[#9A8467]"></i>
+                </div>
+                <h3 class="text-xl serif font-light">Carly Schwenker</h3>
+                <p class="text-[#9A8467] text-[9px] uppercase tracking-widest font-medium leading-relaxed">Lead Wedding Planner & Marketing Manager</p>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    From first inquiry to last dance, Carly shapes each wedding's experience and brings the Sorella story to life for couples everywhere.
+                </p>
+            </div>
+
+            <!-- Paul & Cathy Schwenker -->
+            <div class="flex-shrink-0 w-64 lg:w-auto text-center space-y-4 bg-white p-8">
+                <div class="w-20 h-20 rounded-full bg-[#F4EEE8] mx-auto flex items-center justify-center">
+                    <i class="ph-thin ph-users text-2xl text-[#9A8467]"></i>
+                </div>
+                <h3 class="text-xl serif font-light">Paul & Cathy Schwenker</h3>
+                <p class="text-[#9A8467] text-[9px] uppercase tracking-widest font-medium leading-relaxed">Managing Directors</p>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    The stewards of Sorella's legacy — bringing decades of devotion to this land and an unwavering commitment to the estate's founding spirit.
+                </p>
+            </div>
+
+        </div>
+        <p class="text-center text-[10px] uppercase tracking-widest text-neutral-400 font-light mt-8 lg:hidden">Swipe to see more →</p>
     </div>
 </section>
 
