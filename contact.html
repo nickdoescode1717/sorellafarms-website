@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquire — Sorella 1881</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF7; color: #2C2C2C; scroll-behavior: smooth; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: #9A8467; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease, padding 0.3s ease; }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.4s ease; }
+        #mobile-menu.open { transform: translateX(0); }
+
+        /* Form styles */
+        .form-field {
+            display: block;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #d4cdc5;
+            background: transparent;
+            padding: 10px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: #2C2C2C;
+            outline: none;
+            transition: border-color 0.3s ease;
+            -webkit-appearance: none;
+        }
+        .form-field::placeholder { color: #a8a096; font-weight: 300; }
+        .form-field:focus { border-color: #9A8467; }
+        select.form-field { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A8467' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 24px; }
+        select.form-field option { color: #2C2C2C; }
+        textarea.form-field { resize: none; min-height: 100px; }
+        .form-label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: #9A8467; margin-bottom: 4px; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 py-6 px-8 md:px-12 flex justify-between items-center" style="background-color: transparent; color: white;">
+    <div class="hidden md:flex flex-1 gap-8 items-center">
+        <a href="venue.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">The Venue</a>
+        <a href="weddings.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Weddings</a>
+        <a href="about.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Our Story</a>
+    </div>
+    <div class="flex-shrink-0 text-center">
+        <a href="index.html" class="block">
+            <span class="serif text-2xl tracking-widest uppercase block">Sorella</span>
+            <span class="text-[9px] uppercase tracking-[0.4em] font-light -mt-1 block opacity-70">Est. 1881</span>
+        </a>
+    </div>
+    <div class="hidden md:flex flex-1 gap-8 items-center justify-end">
+        <a href="gallery.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Gallery</a>
+        <a href="investment.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Investment</a>
+        <a href="contact.html" class="bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-6 py-2.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </div>
+    <button id="menu-btn" class="md:hidden ml-auto p-2" aria-label="Open navigation menu">
+        <i class="ph-light ph-list text-2xl"></i>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-[#2C2926] z-[60] flex flex-col items-center justify-center">
+    <button id="close-menu" class="absolute top-7 right-8 text-white/70 hover:text-white transition-colors" aria-label="Close menu">
+        <i class="ph-light ph-x text-2xl"></i>
+    </button>
+    <a href="index.html" class="text-center mb-12">
+        <span class="serif text-4xl text-white tracking-widest block">Sorella</span>
+        <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light mt-1 block">Est. 1881</span>
+    </a>
+    <nav class="flex flex-col items-center gap-8">
+        <a href="venue.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">The Venue</a>
+        <a href="weddings.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Weddings</a>
+        <a href="about.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Our Story</a>
+        <a href="gallery.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Gallery</a>
+        <a href="investment.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Investment</a>
+        <a href="contact.html" class="mt-4 bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-10 py-3.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </nav>
+</div>
+
+<!-- Page Header -->
+<header class="relative bg-[#2C2926] pt-36 pb-24 px-8 text-center text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: url('Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_702.jpg/screen.png'); background-size: cover; background-position: center;"></div>
+    <div class="relative z-10">
+        <p class="text-[10px] uppercase tracking-[0.55em] font-light mb-4 opacity-50">Sorella 1881</p>
+        <h1 class="text-6xl md:text-7xl serif italic font-light">Inquire</h1>
+        <p class="text-sm uppercase tracking-[0.2em] font-light mt-5 opacity-60 max-w-sm mx-auto leading-relaxed">
+            We'd love to hear about your vision
+        </p>
+    </div>
+</header>
+
+<!-- Main Content -->
+<section class="py-20 px-8 md:px-24 bg-[#FDFBF7]">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-16 md:gap-24">
+
+            <!-- Left: Info -->
+            <div class="md:col-span-2 space-y-12">
+                <div>
+                    <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">Let's Begin</span>
+                    <h2 class="text-3xl md:text-4xl serif font-light mt-4 leading-tight">Start the Conversation</h2>
+                    <p class="text-neutral-500 font-light mt-5 leading-relaxed text-sm">
+                        Share a little about your vision and we'll be in touch within two business days. Every inquiry is personal — you'll hear directly from Hayley.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="flex items-start gap-5">
+                        <i class="ph-thin ph-envelope text-2xl text-[#9A8467] mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#2C2C2C] mb-1">Email</p>
+                            <a href="mailto:hayley@sorellafarms.ca" class="text-sm font-light text-neutral-500 hover:text-[#9A8467] transition-colors">hayley@sorellafarms.ca</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <i class="ph-thin ph-map-pin text-2xl text-[#9A8467] mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#2C2C2C] mb-1">Location</p>
+                            <p class="text-sm font-light text-neutral-500">St. Catharines, Ontario<br>Niagara Wine Country</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <i class="ph-thin ph-clock text-2xl text-[#9A8467] mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#2C2C2C] mb-1">Hours</p>
+                            <p class="text-sm font-light text-neutral-500">By appointment only<br>Tours available Thursday–Sunday</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <i class="ph-thin ph-instagram-logo text-2xl text-[#9A8467] mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#2C2C2C] mb-1">Instagram</p>
+                            <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="text-sm font-light text-neutral-500 hover:text-[#9A8467] transition-colors">@sorella1881</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-[#e8e3dc] pt-8">
+                    <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#2C2C2C] mb-4">2026 & 2027 Dates Available</p>
+                    <p class="text-sm font-light text-neutral-500 leading-relaxed">
+                        We hold a limited number of weddings each season to ensure every couple receives the full attention of the Sorella team.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="md:col-span-3">
+                <form id="inquiry-form" class="space-y-10" action="mailto:hayley@sorellafarms.ca" method="get" enctype="text/plain">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <label class="form-label" for="your-name">Your Name</label>
+                            <input type="text" id="your-name" name="your-name" class="form-field" placeholder="First & last name" required>
+                        </div>
+                        <div>
+                            <label class="form-label" for="partner-name">Partner's Name</label>
+                            <input type="text" id="partner-name" name="partner-name" class="form-field" placeholder="First & last name">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-field" placeholder="you@example.com" required>
+                        </div>
+                        <div>
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-field" placeholder="(000) 000-0000">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <label class="form-label" for="wedding-date">Estimated Wedding Date</label>
+                            <input type="text" id="wedding-date" name="wedding-date" class="form-field" placeholder="Month & year">
+                        </div>
+                        <div>
+                            <label class="form-label" for="guest-count">Estimated Guest Count</label>
+                            <select id="guest-count" name="guest-count" class="form-field">
+                                <option value="" disabled selected>Select a range</option>
+                                <option value="under-50">Under 50 guests</option>
+                                <option value="50-80">50 – 80 guests</option>
+                                <option value="80-130">80 – 130 guests</option>
+                                <option value="130-180">130 – 180 guests</option>
+                                <option value="180-230">180 – 230 guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="how-heard">How Did You Hear About Us?</label>
+                        <select id="how-heard" name="how-heard" class="form-field">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="google">Google Search</option>
+                            <option value="friend">Friend or Family</option>
+                            <option value="wedding-show">Wedding Show or Fair</option>
+                            <option value="wedding-planner">Wedding Planner</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="message">Tell Us About Your Vision</label>
+                        <textarea id="message" name="message" class="form-field" rows="5" placeholder="Share anything about your wedding vision, the feeling you're hoping to create, or questions you have about the estate..."></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="bg-[#2C2C2C] text-white w-full py-5 text-[11px] uppercase tracking-[0.25em] hover:bg-black transition-all">
+                            Send Your Inquiry
+                        </button>
+                        <p class="text-center text-xs text-neutral-400 font-light mt-4">
+                            We'll respond within two business days. For urgent inquiries, email hayley@sorellafarms.ca directly.
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Bottom Image Strip -->
+<section class="grid grid-cols-3 h-64 overflow-hidden">
+    <div class="overflow-hidden">
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_31.jpg/screen.png"
+             alt="Ceremony at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="overflow-hidden">
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_57.jpg/screen.png"
+             alt="Courtyard dining at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+    </div>
+    <div class="overflow-hidden">
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1272.jpg/screen.png"
+             alt="Blanc Marquee at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#2C2926] text-white/80 pt-24 pb-12 px-8 md:px-24">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-20">
+            <div>
+                <a href="index.html" class="block mb-8">
+                    <span class="serif text-3xl text-white tracking-widest uppercase block">Sorella</span>
+                    <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light block mt-0.5">Est. 1881</span>
+                </a>
+                <p class="text-sm font-light leading-relaxed opacity-50">A boutique wedding estate in the heart of Niagara Wine Country. Six generations of family, one extraordinary setting.</p>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Contact</h5>
+                <ul class="space-y-4 text-sm font-light opacity-50">
+                    <li>St. Catharines, Ontario<br>Niagara Wine Country</li>
+                    <li><a href="mailto:hayley@sorellafarms.ca" class="hover:opacity-100 transition-opacity">hayley@sorellafarms.ca</a></li>
+                    <li>By Appointment Only</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Navigate</h5>
+                <ul class="space-y-3 text-sm font-light opacity-50">
+                    <li><a href="venue.html" class="hover:text-white hover:opacity-100 transition-colors">The Venue</a></li>
+                    <li><a href="weddings.html" class="hover:text-white hover:opacity-100 transition-colors">Weddings</a></li>
+                    <li><a href="investment.html" class="hover:text-white hover:opacity-100 transition-colors">Investment</a></li>
+                    <li><a href="gallery.html" class="hover:text-white hover:opacity-100 transition-colors">Gallery</a></li>
+                    <li><a href="about.html" class="hover:text-white hover:opacity-100 transition-colors">Our Story</a></li>
+                    <li><a href="contact.html" class="hover:text-white hover:opacity-100 transition-colors">Inquire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Follow Along</h5>
+                <p class="text-sm font-light opacity-50 mb-5">Behind-the-scenes moments, real weddings, and seasonal updates from the estate.</p>
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="text-sm font-light opacity-50 hover:opacity-100 transition-opacity">@sorella1881 on Instagram</a>
+            </div>
+        </div>
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] uppercase tracking-widest opacity-30">© 2025 Sorella 1881 Estate. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Instagram"><i class="ph-light ph-instagram-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Facebook"><i class="ph-light ph-facebook-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Pinterest"><i class="ph-light ph-pinterest-logo text-xl"></i></a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest opacity-30">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <span class="mx-4">·</span>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    function updateNavbar() {
+        if (window.pageYOffset > 80) {
+            navbar.style.backgroundColor = '#FDFBF7';
+            navbar.style.boxShadow = '0 1px 10px rgba(0,0,0,0.07)';
+            navbar.style.color = '#2C2C2C';
+            navbar.style.paddingTop = '1rem';
+            navbar.style.paddingBottom = '1rem';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navbar.style.color = 'white';
+            navbar.style.paddingTop = '1.5rem';
+            navbar.style.paddingBottom = '1.5rem';
+        }
+    }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story — Sorella 1881</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF7; color: #2C2C2C; scroll-behavior: smooth; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: #9A8467; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active::after { width: 100%; }
+        .btn-elegant { border: 1px solid #9A8467; padding: 12px 32px; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; transition: all 0.4s ease; display: inline-block; }
+        .btn-elegant:hover { background-color: #9A8467; color: white; }
+        #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease, padding 0.3s ease; }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.4s ease; }
+        #mobile-menu.open { transform: translateX(0); }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 py-6 px-8 md:px-12 flex justify-between items-center" style="background-color: transparent; color: white;">
+    <div class="hidden md:flex flex-1 gap-8 items-center">
+        <a href="venue.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">The Venue</a>
+        <a href="weddings.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Weddings</a>
+        <a href="about.html" class="nav-link active text-[10px] uppercase tracking-[0.2em] font-medium">Our Story</a>
+    </div>
+    <div class="flex-shrink-0 text-center">
+        <a href="index.html" class="block">
+            <span class="serif text-2xl tracking-widest uppercase block">Sorella</span>
+            <span class="text-[9px] uppercase tracking-[0.4em] font-light -mt-1 block opacity-70">Est. 1881</span>
+        </a>
+    </div>
+    <div class="hidden md:flex flex-1 gap-8 items-center justify-end">
+        <a href="gallery.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Gallery</a>
+        <a href="investment.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Investment</a>
+        <a href="contact.html" class="bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-6 py-2.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </div>
+    <button id="menu-btn" class="md:hidden ml-auto p-2" aria-label="Open navigation menu">
+        <i class="ph-light ph-list text-2xl"></i>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-[#2C2926] z-[60] flex flex-col items-center justify-center">
+    <button id="close-menu" class="absolute top-7 right-8 text-white/70 hover:text-white transition-colors" aria-label="Close menu">
+        <i class="ph-light ph-x text-2xl"></i>
+    </button>
+    <a href="index.html" class="text-center mb-12">
+        <span class="serif text-4xl text-white tracking-widest block">Sorella</span>
+        <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light mt-1 block">Est. 1881</span>
+    </a>
+    <nav class="flex flex-col items-center gap-8">
+        <a href="venue.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">The Venue</a>
+        <a href="weddings.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Weddings</a>
+        <a href="about.html" class="text-white text-xs uppercase tracking-[0.3em]">Our Story</a>
+        <a href="gallery.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Gallery</a>
+        <a href="investment.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Investment</a>
+        <a href="contact.html" class="mt-4 bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-10 py-3.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </nav>
+</div>
+
+<!-- Hero -->
+<header class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0" style="background-image: url('Photos%20Folder/stitch_sorella_1881_design_brief_plan/2024_third_st_louth_10.jpg/screen.png'); background-size: cover; background-position: center 60%;"></div>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);"></div>
+    <div class="relative z-10 text-center text-white px-6">
+        <p class="text-[10px] uppercase tracking-[0.55em] font-light mb-5 opacity-75">Sorella 1881</p>
+        <h1 class="text-6xl md:text-8xl font-light serif italic mb-6 tracking-tight">Our Story</h1>
+        <p class="text-sm uppercase tracking-[0.2em] font-light max-w-md mx-auto leading-relaxed opacity-85">
+            Six generations of family, one extraordinary farm
+        </p>
+    </div>
+</header>
+
+<!-- The Legacy -->
+<section class="py-28 px-8 md:px-24 bg-[#FDFBF7]">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+            <div class="space-y-8">
+                <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">Est. 1881</span>
+                <h2 class="text-4xl md:text-5xl serif font-light leading-tight">More Than a Venue. A Living Legacy.</h2>
+                <p class="text-neutral-600 font-light leading-relaxed text-lg">
+                    In 1881, a family put down roots on this land in the heart of Niagara's Wine Country. They built the barn — still standing today, still draped in ivy, still the most photographed spot on the estate. They tended the soil, shaped the orchards, and passed the land forward, generation by generation, with the same care.
+                </p>
+                <p class="text-neutral-500 font-light leading-relaxed">
+                    Six generations later, the farm has been reimagined as Sorella 1881 — a wedding and event estate that honours everything that came before it while welcoming new love stories into its history.
+                </p>
+                <p class="text-neutral-500 font-light leading-relaxed">
+                    "Sorella" is the Italian word for sister — a name that speaks to the bonds of family, friendship, and belonging that this land has always inspired. We believe a wedding should feel like the most genuine version of who you are together. That belief shapes everything we do here.
+                </p>
+            </div>
+            <div class="space-y-5">
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bg-[#F4EEE8] p-8 space-y-2">
+                        <p class="text-4xl serif font-light text-[#9A8467]">1881</p>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500 font-light">Year Established</p>
+                    </div>
+                    <div class="bg-[#F4EEE8] p-8 space-y-2">
+                        <p class="text-4xl serif font-light text-[#9A8467]">Six</p>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500 font-light">Generations of Family</p>
+                    </div>
+                    <div class="bg-[#F4EEE8] p-8 space-y-2">
+                        <p class="text-4xl serif font-light text-[#9A8467]">30</p>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500 font-light">Acres of Farmland</p>
+                    </div>
+                    <div class="bg-[#F4EEE8] p-8 space-y-2">
+                        <p class="text-4xl serif font-light text-[#9A8467]">One</p>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500 font-light">Extraordinary Setting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Courtyard Barn Quote -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0" style="background-image: url('Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_34.jpg/screen.png'); background-size: cover; background-position: center 30%;"></div>
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="relative z-10 text-white text-center px-6 max-w-3xl mx-auto">
+        <i class="ph-thin ph-quotes text-4xl mb-6 text-[#9A8467]"></i>
+        <h3 class="text-3xl md:text-4xl serif italic font-light leading-relaxed">
+            "We hold heartfelt hospitality above perfection — because the warmth of a celebration matters more than its flawlessness."
+        </h3>
+        <div class="mt-8 h-px w-20 bg-[#9A8467] mx-auto"></div>
+        <p class="mt-5 text-[10px] uppercase tracking-[0.35em] opacity-60">The Sorella Philosophy</p>
+    </div>
+</section>
+
+<!-- Three Values -->
+<section class="py-24 px-8 md:px-24 bg-[#F4EEE8]">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">What We Believe</span>
+            <h2 class="text-3xl md:text-4xl serif font-light mt-4">The Pillars of Sorella</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="space-y-5">
+                <i class="ph-thin ph-heart text-3xl text-[#9A8467]"></i>
+                <h3 class="text-2xl serif font-light">Heartfelt Hospitality</h3>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    We prioritize warmth over formality and presence over perfection. When you're at Sorella, you're welcomed as family — not as a client. Our team is here because they love what happens at this farm, and it shows in every interaction.
+                </p>
+            </div>
+            <div class="space-y-5">
+                <i class="ph-thin ph-hourglass text-3xl text-[#9A8467]"></i>
+                <h3 class="text-2xl serif font-light">Living History</h3>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    The barn is real. The orchard is real. The history is real. We don't build sets or apply artificial patina — we preserve and honour what time has built here. Your celebration takes place within a story that stretches back over a century.
+                </p>
+            </div>
+            <div class="space-y-5">
+                <i class="ph-thin ph-wine text-3xl text-[#9A8467]"></i>
+                <h3 class="text-2xl serif font-light">The Niagara Spirit</h3>
+                <p class="text-neutral-500 font-light text-sm leading-relaxed">
+                    This is Wine Country — a region that understands that the best things take time and are shaped by their environment. Our food, our flowers, and our philosophy are all deeply rooted in Niagara. There is no Sorella without this land.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- La Dolce Sera -->
+<section class="py-24 px-8 md:px-24 bg-[#FDFBF7]">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="relative">
+                <div class="w-full aspect-[4/3] overflow-hidden shadow-xl group">
+                    <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_54.jpg/screen.png"
+                         alt="Farm-to-table wedding tablescape at Sorella 1881 — white florals, linen, crystal glasses"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute -bottom-5 -right-5 w-36 h-36 border border-[#9A8467]/20 -z-10 hidden md:block"></div>
+            </div>
+            <div class="space-y-7">
+                <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">Culinary Partner</span>
+                <h2 class="text-4xl serif font-light leading-tight">La Dolce Sera</h2>
+                <p class="text-neutral-600 font-light leading-relaxed text-lg">
+                    The name means "the sweet evening" — and that is exactly what La Dolce Sera creates at every Sorella wedding. Our in-house culinary team crafts farm-to-table menus that celebrate the extraordinary produce of the Niagara region, served with care and artistry.
+                </p>
+                <p class="text-neutral-500 font-light leading-relaxed">
+                    Every menu begins with a conversation about you — your tastes, your traditions, your guests. From there, La Dolce Sera builds a culinary experience that feels like it belongs entirely to your evening.
+                </p>
+                <ul class="space-y-3 text-sm text-neutral-500 font-light">
+                    <li class="flex items-start gap-3"><i class="ph-light ph-leaf text-[#9A8467] mt-0.5"></i> Seasonal farm-to-table menus</li>
+                    <li class="flex items-start gap-3"><i class="ph-light ph-wine text-[#9A8467] mt-0.5"></i> Local Niagara wine pairings</li>
+                    <li class="flex items-start gap-3"><i class="ph-light ph-fork-knife text-[#9A8467] mt-0.5"></i> Custom cocktail hour stations</li>
+                    <li class="flex items-start gap-3"><i class="ph-light ph-cake text-[#9A8467] mt-0.5"></i> Late-night snack programs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Team -->
+<section class="py-24 px-8 md:px-24 bg-[#F4EEE8]">
+    <div class="max-w-4xl mx-auto text-center">
+        <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">The People Behind Sorella</span>
+        <h2 class="text-3xl md:text-4xl serif font-light mt-4 mb-14">Meet the Team</h2>
+        <div class="max-w-md mx-auto space-y-6">
+            <div class="w-24 h-24 rounded-full bg-[#e8e3dc] mx-auto flex items-center justify-center">
+                <i class="ph-thin ph-user text-3xl text-[#9A8467]"></i>
+            </div>
+            <h3 class="text-2xl serif font-light">Hayley</h3>
+            <p class="text-[#9A8467] text-[10px] uppercase tracking-widest font-medium">Wedding & Events Director</p>
+            <p class="text-neutral-500 font-light leading-relaxed">
+                Hayley is the heart of Sorella's wedding team — the person you'll hear from first and the one who will be at the estate on your wedding day. With a deep love for this land and a genuine belief in the power of heartfelt celebrations, she brings warmth and dedication to every couple she works with.
+            </p>
+            <a href="mailto:hayley@sorellafarms.ca" class="text-[10px] uppercase tracking-widest text-[#9A8467] font-semibold border-b border-[#9A8467] pb-1 hover:text-[#867156] transition-colors inline-block">hayley@sorellafarms.ca</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-36 px-6 bg-white text-center">
+    <div class="max-w-2xl mx-auto space-y-8">
+        <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">Come and See</span>
+        <h2 class="text-4xl md:text-5xl serif font-light leading-tight">Begin Your Story Here</h2>
+        <p class="text-neutral-500 font-light text-lg">
+            We'd love to show you the estate in person and hear about the celebration you're envisioning. Every inquiry begins with a conversation — not a sales pitch.
+        </p>
+        <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="contact.html" class="bg-[#2C2C2C] text-white px-12 py-5 text-[11px] uppercase tracking-[0.2em] hover:bg-black transition-all inline-block">Get in Touch</a>
+            <a href="venue.html" class="btn-elegant px-12 py-5 text-[11px]">Explore the Estate</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#2C2926] text-white/80 pt-24 pb-12 px-8 md:px-24">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-20">
+            <div>
+                <a href="index.html" class="block mb-8">
+                    <span class="serif text-3xl text-white tracking-widest uppercase block">Sorella</span>
+                    <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light block mt-0.5">Est. 1881</span>
+                </a>
+                <p class="text-sm font-light leading-relaxed opacity-50">A boutique wedding estate in the heart of Niagara Wine Country. Six generations of family, one extraordinary setting.</p>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Contact</h5>
+                <ul class="space-y-4 text-sm font-light opacity-50">
+                    <li>St. Catharines, Ontario<br>Niagara Wine Country</li>
+                    <li><a href="mailto:hayley@sorellafarms.ca" class="hover:opacity-100 transition-opacity">hayley@sorellafarms.ca</a></li>
+                    <li>By Appointment Only</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Navigate</h5>
+                <ul class="space-y-3 text-sm font-light opacity-50">
+                    <li><a href="venue.html" class="hover:text-white hover:opacity-100 transition-colors">The Venue</a></li>
+                    <li><a href="weddings.html" class="hover:text-white hover:opacity-100 transition-colors">Weddings</a></li>
+                    <li><a href="investment.html" class="hover:text-white hover:opacity-100 transition-colors">Investment</a></li>
+                    <li><a href="gallery.html" class="hover:text-white hover:opacity-100 transition-colors">Gallery</a></li>
+                    <li><a href="about.html" class="hover:text-white hover:opacity-100 transition-colors">Our Story</a></li>
+                    <li><a href="contact.html" class="hover:text-white hover:opacity-100 transition-colors">Inquire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Follow Along</h5>
+                <p class="text-sm font-light opacity-50 mb-5">Behind-the-scenes moments, real weddings, and seasonal updates from the estate.</p>
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="text-sm font-light opacity-50 hover:opacity-100 transition-opacity">@sorella1881 on Instagram</a>
+            </div>
+        </div>
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] uppercase tracking-widest opacity-30">© 2025 Sorella 1881 Estate. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Instagram"><i class="ph-light ph-instagram-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Facebook"><i class="ph-light ph-facebook-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Pinterest"><i class="ph-light ph-pinterest-logo text-xl"></i></a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest opacity-30">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <span class="mx-4">·</span>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    function updateNavbar() {
+        if (window.pageYOffset > 80) {
+            navbar.style.backgroundColor = '#FDFBF7';
+            navbar.style.boxShadow = '0 1px 10px rgba(0,0,0,0.07)';
+            navbar.style.color = '#2C2C2C';
+            navbar.style.paddingTop = '1rem';
+            navbar.style.paddingBottom = '1rem';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navbar.style.color = 'white';
+            navbar.style.paddingTop = '1.5rem';
+            navbar.style.paddingBottom = '1.5rem';
+        }
+    }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Sorella 1881</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF7; color: #2C2C2C; scroll-behavior: smooth; }
+        h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background-color: #9A8467; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active::after { width: 100%; }
+        .btn-elegant { border: 1px solid #9A8467; padding: 12px 32px; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; transition: all 0.4s ease; display: inline-block; }
+        .btn-elegant:hover { background-color: #9A8467; color: white; }
+        #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease, padding 0.3s ease; }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.4s ease; }
+        #mobile-menu.open { transform: translateX(0); }
+
+        /* Masonry Gallery */
+        .masonry-grid {
+            columns: 3;
+            column-gap: 0.75rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.04);
+        }
+        .masonry-item.hidden-item {
+            display: none;
+        }
+        @media (max-width: 900px) {
+            .masonry-grid { columns: 2; }
+        }
+        @media (max-width: 540px) {
+            .masonry-grid { columns: 1; }
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.open {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+        }
+
+        /* Filter tabs */
+        .filter-btn {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 8px 20px;
+            border: 1px solid #d4cdc5;
+            color: #9A8467;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #9A8467;
+            color: white;
+            border-color: #9A8467;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 py-6 px-8 md:px-12 flex justify-between items-center" style="background-color: transparent; color: white;">
+    <div class="hidden md:flex flex-1 gap-8 items-center">
+        <a href="venue.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">The Venue</a>
+        <a href="weddings.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Weddings</a>
+        <a href="about.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Our Story</a>
+    </div>
+    <div class="flex-shrink-0 text-center">
+        <a href="index.html" class="block">
+            <span class="serif text-2xl tracking-widest uppercase block">Sorella</span>
+            <span class="text-[9px] uppercase tracking-[0.4em] font-light -mt-1 block opacity-70">Est. 1881</span>
+        </a>
+    </div>
+    <div class="hidden md:flex flex-1 gap-8 items-center justify-end">
+        <a href="gallery.html" class="nav-link active text-[10px] uppercase tracking-[0.2em] font-medium">Gallery</a>
+        <a href="investment.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Investment</a>
+        <a href="contact.html" class="bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-6 py-2.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </div>
+    <button id="menu-btn" class="md:hidden ml-auto p-2" aria-label="Open navigation menu">
+        <i class="ph-light ph-list text-2xl"></i>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-[#2C2926] z-[60] flex flex-col items-center justify-center">
+    <button id="close-menu" class="absolute top-7 right-8 text-white/70 hover:text-white transition-colors" aria-label="Close menu">
+        <i class="ph-light ph-x text-2xl"></i>
+    </button>
+    <a href="index.html" class="text-center mb-12">
+        <span class="serif text-4xl text-white tracking-widest block">Sorella</span>
+        <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light mt-1 block">Est. 1881</span>
+    </a>
+    <nav class="flex flex-col items-center gap-8">
+        <a href="venue.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">The Venue</a>
+        <a href="weddings.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Weddings</a>
+        <a href="about.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Our Story</a>
+        <a href="gallery.html" class="text-white text-xs uppercase tracking-[0.3em]">Gallery</a>
+        <a href="investment.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">Investment</a>
+        <a href="contact.html" class="mt-4 bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-10 py-3.5 hover:bg-[#867156] transition-colors">Inquire</a>
+    </nav>
+</div>
+
+<!-- Page Header -->
+<header class="relative bg-[#2C2926] pt-36 pb-20 px-8 text-center text-white">
+    <p class="text-[10px] uppercase tracking-[0.55em] font-light mb-4 opacity-50">Sorella 1881</p>
+    <h1 class="text-6xl md:text-7xl serif italic font-light">Gallery</h1>
+    <p class="text-sm uppercase tracking-[0.2em] font-light mt-5 opacity-60">A glimpse into life at the estate</p>
+</header>
+
+<!-- Filter Tabs -->
+<section class="py-12 px-8 bg-[#FDFBF7] sticky top-[60px] z-30 border-b border-[#e8e3dc]">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ceremony">Ceremony</button>
+        <button class="filter-btn" data-filter="reception">Reception</button>
+        <button class="filter-btn" data-filter="estate">The Estate</button>
+        <button class="filter-btn" data-filter="accommodations">Accommodations</button>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-12 px-6 md:px-10 bg-[#FDFBF7]">
+    <div class="max-w-7xl mx-auto">
+        <div class="masonry-grid" id="gallery-grid">
+
+            <!-- Ceremony -->
+            <div class="masonry-item" data-category="ceremony" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_31.jpg/screen.png"
+                     alt="Ivy-covered barn ceremony aisle with white hydrangeas and rattan chairs at Sorella 1881">
+            </div>
+            <div class="masonry-item" data-category="ceremony" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_707_2.jpg/screen.png"
+                     alt="Outdoor ceremony setup beneath mature trees at Sorella 1881 — rows of cream chairs on lawn">
+            </div>
+            <div class="masonry-item" data-category="ceremony" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_702.jpg/screen.png"
+                     alt="Wine barrel with overflowing baby's breath flowers, ceremony aisle detail at Sorella 1881">
+            </div>
+            <div class="masonry-item" data-category="ceremony" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_34.jpg/screen.png"
+                     alt="Ivy-covered 1881 barn facade with ceremony chairs and white floral arrangements">
+            </div>
+
+            <!-- Reception -->
+            <div class="masonry-item" data-category="reception" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_57.jpg/screen.png"
+                     alt="Al fresco courtyard dinner reception at Sorella 1881 with string lights and barn backdrop">
+            </div>
+            <div class="masonry-item" data-category="reception" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1321.jpg/screen.png"
+                     alt="Blanc Marquee reception interior at Sorella 1881 — live band performing under disco balls and string lights">
+            </div>
+            <div class="masonry-item" data-category="reception" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_54.jpg/screen.png"
+                     alt="Elegant wedding tablescape at Sorella 1881 — white floral centrepieces against hanging fern wall">
+            </div>
+            <div class="masonry-item" data-category="reception" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1139_2.jpg/screen.png"
+                     alt="Aerial view of Sorella 1881 courtyard reception — round tables set for guests viewed from above">
+            </div>
+            <div class="masonry-item" data-category="reception" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1355.jpg/screen.png"
+                     alt="Night reception at Sorella 1881 — glowing Blanc Marquee and string lights under a star-filled sky">
+            </div>
+
+            <!-- The Estate -->
+            <div class="masonry-item" data-category="estate" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_945.jpg/screen.png"
+                     alt="Aerial view of Sorella 1881 estate — white barn and farmhouse surrounded by 30 acres of Niagara farmland">
+            </div>
+            <div class="masonry-item" data-category="estate" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1272.jpg/screen.png"
+                     alt="Blanc Marquee at Sorella 1881 — elegant white reception tent with café seating and string lights at dusk">
+            </div>
+            <div class="masonry-item" data-category="estate" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/2024_third_st_louth_10.jpg/screen.png"
+                     alt="Exterior of Sorella Farms farmhouse with circular sign on wood-panelled facade, surrounded by hydrangeas">
+            </div>
+
+            <!-- Accommodations -->
+            <div class="masonry-item" data-category="accommodations" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/2024_third_st_louth_48.jpg/screen.png"
+                     alt="Master bedroom in The Ranch House at Sorella 1881 — luxury bed with gold chandelier and bay windows">
+            </div>
+            <div class="masonry-item" data-category="accommodations" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/2024_third_st_louth_39.jpg/screen.png"
+                     alt="Modern white kitchen in The Ranch House at Sorella 1881 — marble island, pendant lights, farmhouse decor">
+            </div>
+            <div class="masonry-item" data-category="accommodations" onclick="openLightbox(this)">
+                <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/2024_third_st_louth_38.jpg/screen.png"
+                     alt="Open-plan dining and living area in The Ranch House at Sorella 1881 — set dining table with chandelier">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox(event)">
+    <button id="lb-close" class="absolute top-6 right-8 text-white/70 hover:text-white text-3xl" aria-label="Close lightbox">
+        <i class="ph-light ph-x"></i>
+    </button>
+    <button id="lb-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl" aria-label="Previous image">
+        <i class="ph-light ph-caret-left"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="">
+    <button id="lb-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-3xl" aria-label="Next image">
+        <i class="ph-light ph-caret-right"></i>
+    </button>
+</div>
+
+<!-- CTA -->
+<section class="py-28 px-6 bg-[#F4EEE8] text-center">
+    <div class="max-w-2xl mx-auto space-y-7">
+        <span class="text-[#9A8467] text-[10px] uppercase tracking-[0.25em] font-semibold">Experience It in Person</span>
+        <h2 class="text-3xl md:text-4xl serif font-light">Photographs Only Tell Half the Story</h2>
+        <p class="text-neutral-500 font-light leading-relaxed">
+            The light at golden hour on the barn. The scent of evening blooms in the courtyard. Some things can only be felt in person — we'd love to show you.
+        </p>
+        <div class="pt-4">
+            <a href="contact.html" class="bg-[#2C2C2C] text-white px-12 py-5 text-[11px] uppercase tracking-[0.2em] hover:bg-black transition-all inline-block">Schedule a Private Tour</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#2C2926] text-white/80 pt-24 pb-12 px-8 md:px-24">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 mb-20">
+            <div>
+                <a href="index.html" class="block mb-8">
+                    <span class="serif text-3xl text-white tracking-widest uppercase block">Sorella</span>
+                    <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light block mt-0.5">Est. 1881</span>
+                </a>
+                <p class="text-sm font-light leading-relaxed opacity-50">A boutique wedding estate in the heart of Niagara Wine Country. Six generations of family, one extraordinary setting.</p>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Contact</h5>
+                <ul class="space-y-4 text-sm font-light opacity-50">
+                    <li>St. Catharines, Ontario<br>Niagara Wine Country</li>
+                    <li><a href="mailto:hayley@sorellafarms.ca" class="hover:opacity-100 transition-opacity">hayley@sorellafarms.ca</a></li>
+                    <li>By Appointment Only</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Navigate</h5>
+                <ul class="space-y-3 text-sm font-light opacity-50">
+                    <li><a href="venue.html" class="hover:text-white hover:opacity-100 transition-colors">The Venue</a></li>
+                    <li><a href="weddings.html" class="hover:text-white hover:opacity-100 transition-colors">Weddings</a></li>
+                    <li><a href="investment.html" class="hover:text-white hover:opacity-100 transition-colors">Investment</a></li>
+                    <li><a href="gallery.html" class="hover:text-white hover:opacity-100 transition-colors">Gallery</a></li>
+                    <li><a href="about.html" class="hover:text-white hover:opacity-100 transition-colors">Our Story</a></li>
+                    <li><a href="contact.html" class="hover:text-white hover:opacity-100 transition-colors">Inquire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium">Follow Along</h5>
+                <p class="text-sm font-light opacity-50 mb-5">Behind-the-scenes moments, real weddings, and seasonal updates from the estate.</p>
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="text-sm font-light opacity-50 hover:opacity-100 transition-opacity">@sorella1881 on Instagram</a>
+            </div>
+        </div>
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] uppercase tracking-widest opacity-30">© 2025 Sorella 1881 Estate. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/sorella1881" target="_blank" rel="noopener" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Instagram"><i class="ph-light ph-instagram-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Facebook"><i class="ph-light ph-facebook-logo text-xl"></i></a>
+                <a href="#" class="opacity-30 hover:opacity-80 transition-opacity" aria-label="Pinterest"><i class="ph-light ph-pinterest-logo text-xl"></i></a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest opacity-30">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <span class="mx-4">·</span>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Navbar
+    const navbar = document.getElementById('navbar');
+    function updateNavbar() {
+        if (window.pageYOffset > 80) {
+            navbar.style.backgroundColor = '#FDFBF7';
+            navbar.style.boxShadow = '0 1px 10px rgba(0,0,0,0.07)';
+            navbar.style.color = '#2C2C2C';
+            navbar.style.paddingTop = '1rem';
+            navbar.style.paddingBottom = '1rem';
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navbar.style.color = 'white';
+            navbar.style.paddingTop = '1.5rem';
+            navbar.style.paddingBottom = '1.5rem';
+        }
+    }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // Gallery Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.masonry-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            items.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.classList.remove('hidden-item');
+                } else {
+                    item.classList.add('hidden-item');
+                }
+            });
+        });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentItems = [];
+    let currentIndex = 0;
+
+    function getVisibleItems() {
+        return Array.from(document.querySelectorAll('.masonry-item:not(.hidden-item)'));
+    }
+
+    function openLightbox(el) {
+        currentItems = getVisibleItems();
+        currentIndex = currentItems.indexOf(el);
+        lightboxImg.src = el.querySelector('img').src;
+        lightboxImg.alt = el.querySelector('img').alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+        if (event.target === lightbox || event.target.closest('#lb-close')) {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.getElementById('lb-prev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+        const img = currentItems[currentIndex].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+
+    document.getElementById('lb-next').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentItems.length;
+        const img = currentItems[currentIndex].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+        if (e.key === 'ArrowLeft') document.getElementById('lb-prev').click();
+        if (e.key === 'ArrowRight') document.getElementById('lb-next').click();
+    });
+</script>
+
+</body>
+</html>

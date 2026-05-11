@@ -1,0 +1,338 @@
+<html vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <script src="https://cdn.tailwindcss.com/3.4.17" vid="4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="5">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="6">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" vid="7">
+    <script src="https://unpkg.com/@phosphor-icons/web" vid="8"></script>
+    <style vid="9">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #2C2C2C;
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #9A8467;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero-video-container {
+            position: relative;
+            overflow: hidden;
+            height: 90vh;
+        }
+        .overlay-vignette {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%);
+        }
+        .letter-spacing-widest {
+            letter-spacing: 0.2em;
+        }
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .btn-elegant {
+            border: 1px solid #9A8467;
+            padding: 12px 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            transition: all 0.4s ease;
+        }
+        .btn-elegant:hover {
+            background-color: #9A8467;
+            color: white;
+        }
+    </style>
+</head>
+<body class="w-full h-full m-0 p-0" vid="10">
+
+    
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6 px-12 flex justify-between items-center bg-transparent" id="navbar" vid="11">
+        <div class="flex-1 flex gap-8 items-center" vid="12">
+            <a href="#" class="nav-link text-[10px] uppercase letter-spacing-widest font-medium tracking-tighter" vid="13">The Estate</a>
+            <a href="#" class="nav-link text-[10px] uppercase letter-spacing-widest font-medium" vid="14">Weddings</a>
+            <a href="#" class="nav-link text-[10px] uppercase letter-spacing-widest font-medium" vid="15">Events</a>
+        </div>
+        
+        <div class="flex-shrink-0 text-center" vid="16">
+            <a href="#" class="block" vid="17">
+                <span class="serif text-2xl tracking-widest uppercase block" vid="18">Sorella</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] font-light -mt-1 block" vid="19">Est. 1881</span>
+            </a>
+        </div>
+
+        <div class="flex-1 flex gap-8 items-center justify-end" vid="20">
+            <a href="#" class="nav-link text-[10px] uppercase letter-spacing-widest font-medium" vid="21">Gallery</a>
+            <a href="#" class="nav-link text-[10px] uppercase letter-spacing-widest font-medium" vid="22">History</a>
+            <a href="#" class="bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-6 py-2.5 rounded-sm hover:bg-[#867156] transition-colors" vid="23">Book a Tour</a>
+        </div>
+    </nav>
+
+    
+    <header class="relative w-full h-screen bg-neutral-900 flex items-center justify-center overflow-hidden" vid="24">
+        
+        <div class="absolute inset-0 w-full h-full bg-[#1a1a1a]" vid="25">
+            <div class="w-full h-full flex items-center justify-center opacity-40" vid="26">
+                
+                <div class="text-white text-center" vid="27">
+                    <i class="ph-thin ph-play-circle text-8xl mb-4 opacity-50" vid="28"></i>
+                    <p class="uppercase tracking-[0.5em] text-xs font-light" vid="29">Cinematic Experience</p>
+                </div>
+            </div>
+            
+            <div class="absolute inset-0 overlay-vignette" vid="30"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4" vid="31">
+            <h1 class="text-6xl md:text-8xl font-light mb-6 serif italic tracking-tight" vid="32">Sorella 1881</h1>
+            <p class="text-sm md:text-base uppercase letter-spacing-widest font-light mb-12 max-w-2xl mx-auto leading-relaxed" vid="33">
+                A historic 30-acre sanctuary in the heart of Niagara's Wine Country
+            </p>
+            <div class="flex gap-4 justify-center" vid="34">
+                <button class="border border-white/40 px-8 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-500" vid="35">Discover More</button>
+                <button class="bg-white text-black px-8 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-neutral-200 transition-all duration-500" vid="36">Our Packages</button>
+            </div>
+        </div>
+
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 animate-bounce cursor-pointer" vid="37">
+            <i class="ph-light ph-caret-down text-2xl" vid="38"></i>
+        </div>
+    </header>
+
+    
+    <section class="py-32 px-12 md:px-24 bg-[#FDFBF7]" vid="39">
+        <div class="max-w-6xl mx-auto" vid="40">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center" vid="41">
+                <div class="space-y-8" vid="42">
+                    <span class="text-[#9A8467] text-[10px] uppercase letter-spacing-widest font-semibold" vid="43">The Estate Legacy</span>
+                    <h2 class="text-4xl md:text-5xl leading-tight text-[#2C2C2C]" vid="44">Historic Charm meets Modern Elegance</h2>
+                    <p class="text-neutral-600 leading-relaxed font-light text-lg" vid="45">
+                        Nestled amidst thirty acres of rolling vineyards and ancient oak groves, Sorella 1881 offers an unparalleled backdrop for your most cherished moments. Our historic estate has been meticulously preserved to offer a boutique experience that honors its heritage while providing world-class amenities.
+                    </p>
+                    <div class="pt-4" vid="46">
+                        <a href="#" class="btn-elegant inline-block" vid="47">Read Our Story</a>
+                    </div>
+                </div>
+                <div class="relative" vid="48">
+                    <div class="w-full aspect-[4/5] bg-neutral-200 shadow-2xl relative overflow-hidden group" vid="49">
+                        
+                        <div class="absolute inset-0 bg-[#e8e3dc] flex items-center justify-center" vid="50">
+                            <i class="ph-thin ph-image text-4xl text-neutral-400" vid="51"></i>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 border border-[#9A8467]/30 z-0" vid="52"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="h-[70vh] w-full relative overflow-hidden bg-neutral-800" vid="53">
+        
+        <div class="absolute inset-0 bg-[#3a3a3a] opacity-60" vid="54"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6" vid="55">
+            <i class="ph-thin ph-quotes text-5xl mb-6 text-[#9A8467]" vid="56"></i>
+            <h3 class="text-3xl md:text-4xl serif italic max-w-3xl leading-relaxed font-light" vid="57">
+                "An ethereal setting where time seems to slow down, allowing every moment of your celebration to resonate."
+            </h3>
+            <div class="mt-8 h-[1px] w-24 bg-[#9A8467]" vid="58"></div>
+            <p class="mt-6 uppercase text-[10px] tracking-[0.3em]" vid="59">Niagara Wine Country's Finest</p>
+        </div>
+    </section>
+
+    
+    <section class="py-32 px-12 md:px-24" vid="60">
+        <div class="max-w-7xl mx-auto" vid="61">
+            <div class="flex flex-col md:flex-row gap-12" vid="62">
+                
+                <div class="flex-1 group" vid="63">
+                    <div class="aspect-[3/2] bg-[#f0ede8] mb-8 overflow-hidden relative" vid="64">
+                        
+                        <div class="absolute inset-0 bg-neutral-200 group-hover:scale-105 transition-transform duration-700" vid="65"></div>
+                        <div class="absolute inset-0 flex items-center justify-center" vid="66">
+                            <i class="ph-thin ph-heart text-4xl text-neutral-400" vid="67"></i>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase letter-spacing-widest text-[#9A8467] font-medium mb-4 block" vid="68">Celebrations of Love</span>
+                    <h3 class="text-3xl serif mb-6" vid="69">Bespoke Weddings</h3>
+                    <p class="text-neutral-500 font-light mb-8 leading-relaxed" vid="70">
+                        From intimate elopements to grand celebrations under the stars, our venue provides a versatile canvas for your unique vision. We offer curated packages that simplify your planning without sacrificing luxury.
+                    </p>
+                    <a href="#" class="text-[10px] uppercase font-semibold tracking-widest border-b border-[#9A8467] pb-1 hover:text-[#9A8467] transition-colors" vid="71">Explore Weddings</a>
+                </div>
+
+                
+                <div class="flex-1 group" vid="72">
+                    <div class="aspect-[3/2] bg-[#f0ede8] mb-8 overflow-hidden relative" vid="73">
+                        
+                        <div class="absolute inset-0 bg-neutral-200 group-hover:scale-105 transition-transform duration-700" vid="74"></div>
+                        <div class="absolute inset-0 flex items-center justify-center" vid="75">
+                            <i class="ph-thin ph-star text-4xl text-neutral-400" vid="76"></i>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase letter-spacing-widest text-[#9A8467] font-medium mb-4 block" vid="77">Corporate &amp; Social</span>
+                    <h3 class="text-3xl serif mb-6" vid="78">Signature Events</h3>
+                    <p class="text-neutral-500 font-light mb-8 leading-relaxed" vid="79">
+                        Elevate your corporate retreats, galas, and milestones. Our estate offers the privacy and sophistication required for high-profile events, combined with the warmth of Niagara hospitality.
+                    </p>
+                    <a href="#" class="text-[10px] uppercase font-semibold tracking-widest border-b border-[#9A8467] pb-1 hover:text-[#9A8467] transition-colors" vid="80">Explore Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="bg-[#F4EEE8] py-24 px-12 md:px-24" vid="81">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12" vid="82">
+            <div class="text-center space-y-4" vid="83">
+                <i class="ph-thin ph-buildings text-3xl text-[#9A8467]" vid="84"></i>
+                <h4 class="serif text-xl" vid="85">The Manor</h4>
+                <p class="text-xs uppercase tracking-widest font-light text-neutral-500" vid="86">Historic Architecture</p>
+            </div>
+            <div class="text-center space-y-4" vid="87">
+                <i class="ph-thin ph-park text-3xl text-[#9A8467]" vid="88"></i>
+                <h4 class="serif text-xl" vid="89">30 Acres</h4>
+                <p class="text-xs uppercase tracking-widest font-light text-neutral-500" vid="90">Private Parklands</p>
+            </div>
+            <div class="text-center space-y-4" vid="91">
+                <i class="ph-thin ph-wine text-3xl text-[#9A8467]" vid="92"></i>
+                <h4 class="serif text-xl" vid="93">Wine Country</h4>
+                <p class="text-xs uppercase tracking-widest font-light text-neutral-500" vid="94">Niagara VQA Partner</p>
+            </div>
+            <div class="text-center space-y-4" vid="95">
+                <i class="ph-thin ph-users-three text-3xl text-[#9A8467]" vid="96"></i>
+                <h4 class="serif text-xl" vid="97">Concierge</h4>
+                <p class="text-xs uppercase tracking-widest font-light text-neutral-500" vid="98">Bespoke Service</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="py-40 px-6 bg-white text-center" vid="99">
+        <div class="max-w-3xl mx-auto space-y-8" vid="100">
+            <span class="text-[#9A8467] text-[10px] uppercase letter-spacing-widest font-semibold" vid="101">Inquire Today</span>
+            <h2 class="text-4xl md:text-6xl serif font-light" vid="102">Begin Your Legacy at Sorella 1881</h2>
+            <p class="text-neutral-500 font-light text-lg" vid="103">
+                Dates for 2025 and 2026 are now being reserved. Contact our events team to schedule a private tour of the estate.
+            </p>
+            <div class="pt-8 flex flex-col md:flex-row gap-4 justify-center" vid="104">
+                <button class="bg-[#2C2C2C] text-white px-12 py-5 text-[11px] uppercase tracking-[0.2em] hover:bg-black transition-all" vid="105">Schedule a Tour</button>
+                <button class="btn-elegant px-12 py-5 text-[11px]" vid="106">Request Brochure</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="bg-[#2C2926] text-white/80 pt-24 pb-12 px-12 md:px-24" vid="107">
+        <div class="max-w-7xl mx-auto" vid="108">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20" vid="109">
+                <div class="col-span-1 md:col-span-1" vid="110">
+                    <a href="#" class="block mb-8" vid="111">
+                        <span class="serif text-3xl text-white tracking-widest uppercase block" vid="112">Sorella</span>
+                        <span class="text-[10px] text-white/50 uppercase tracking-[0.4em] font-light block" vid="113">Est. 1881</span>
+                    </a>
+                    <p class="text-sm font-light leading-relaxed opacity-60" vid="114">
+                        A boutique wedding venue offering timeless elegance in the heart of Niagara Wine Country.
+                    </p>
+                </div>
+                
+                <div vid="115">
+                    <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium" vid="116">Contact</h5>
+                    <ul class="space-y-4 text-sm font-light opacity-60" vid="117">
+                        <li vid="118">1881 Estate Lane<br vid="119">Niagara-on-the-Lake, ON</li>
+                        <li vid="120">(905) 555-0123</li>
+                        <li vid="121">concierge@sorella1881.com</li>
+                    </ul>
+                </div>
+
+                <div vid="122">
+                    <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium" vid="123">Navigate</h5>
+                    <ul class="space-y-4 text-sm font-light opacity-60" vid="124">
+                        <li vid="125"><a href="#" class="hover:text-white transition-colors" vid="126">The Grounds</a></li>
+                        <li vid="127"><a href="#" class="hover:text-white transition-colors" vid="128">Wedding Packages</a></li>
+                        <li vid="129"><a href="#" class="hover:text-white transition-colors" vid="130">Gallery</a></li>
+                        <li vid="131"><a href="#" class="hover:text-white transition-colors" vid="132">Press &amp; Media</a></li>
+                    </ul>
+                </div>
+
+                <div vid="133">
+                    <h5 class="text-white text-[11px] uppercase tracking-widest mb-8 font-medium" vid="134">Journal</h5>
+                    <p class="text-sm font-light opacity-60 mb-6" vid="135">Stay updated on our latest seasonal events and venue news.</p>
+                    <div class="flex" vid="136">
+                        <input type="email" placeholder="Email address" class="bg-transparent border-b border-white/20 py-2 flex-grow text-sm focus:outline-none focus:border-white/60 transition-colors" vid="137">
+                        <button class="border-b border-white/20 px-4 hover:border-white/60 transition-colors" vid="138">
+                            <i class="ph-light ph-arrow-right" vid="139"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6" vid="140">
+                <div class="text-[10px] uppercase tracking-widest opacity-40" vid="141">
+                    © 2024 Sorella Farms Estate. All rights reserved.
+                </div>
+                <div class="flex gap-8" vid="142">
+                    <a href="#" class="opacity-40 hover:opacity-100 transition-opacity" vid="143"><i class="ph-light ph-instagram-logo text-xl" vid="144"></i></a>
+                    <a href="#" class="opacity-40 hover:opacity-100 transition-opacity" vid="145"><i class="ph-light ph-facebook-logo text-xl" vid="146"></i></a>
+                    <a href="#" class="opacity-40 hover:opacity-100 transition-opacity" vid="147"><i class="ph-light ph-pinterest-logo text-xl" vid="148"></i></a>
+                </div>
+                <div class="text-[10px] uppercase tracking-widest opacity-40 space-x-6" vid="149">
+                    <a href="#" class="hover:text-white transition-colors" vid="150">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors" vid="151">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script vid="152">
+        
+        window.onscroll = function() {
+            var navbar = document.getElementById("navbar");
+            if (window.pageYOffset > 100) {
+                navbar.classList.add("bg-[#FDFBF7]", "shadow-sm", "py-4");
+                navbar.classList.remove("bg-transparent", "py-6");
+                
+                navbar.querySelectorAll('.nav-link').forEach(el => el.classList.add('text-[#2C2C2C]'));
+                navbar.querySelector('.serif').classList.remove('text-white');
+                navbar.querySelector('.serif').classList.add('text-[#2C2C2C]');
+                navbar.querySelector('.font-light').classList.add('text-[#2C2C2C]/50');
+            } else {
+                navbar.classList.remove("bg-[#FDFBF7]", "shadow-sm", "py-4");
+                navbar.classList.add("bg-transparent", "py-6");
+                
+                
+                
+            }
+        };
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.add("text-white");
+            navbar.querySelectorAll('.nav-link').forEach(el => el.classList.add('text-white'));
+            navbar.querySelector('.serif').classList.add('text-white');
+            navbar.querySelector('.font-light').classList.add('text-white/70');
+        });
+    </script>
+
+</body></html>
