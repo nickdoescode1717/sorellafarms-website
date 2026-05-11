@@ -32,10 +32,10 @@
         <a href="weddings.html" class="nav-link active text-[10px] uppercase tracking-[0.2em] font-medium">Weddings</a>
         <a href="about.html" class="nav-link text-[10px] uppercase tracking-[0.2em] font-medium">Our Story</a>
     </div>
-    <div class="flex-shrink-0 text-center">
-        <a href="index.html" class="block">
-            <span class="serif text-2xl tracking-widest uppercase block">Sorella</span>
-            <span class="text-[9px] uppercase tracking-[0.4em] font-light -mt-1 block opacity-70">Est. 1881</span>
+    <div class="flex-shrink-0">
+        <a href="index.html" class="block relative">
+            <img id="logo-white" src="Photos%20Folder/logo/logowhite.png" alt="Sorella 1881" class="h-10 w-auto" style="transition: opacity 0.4s ease; display: block;">
+            <img id="logo-brown" src="Photos%20Folder/logo/logobrown.png" alt="Sorella 1881" class="h-10 w-auto absolute top-0 left-0" style="opacity: 0; transition: opacity 0.4s ease; display: block;">
         </a>
     </div>
     <div class="hidden md:flex flex-1 gap-8 items-center justify-end">
@@ -53,9 +53,8 @@
     <button id="close-menu" class="absolute top-7 right-8 text-white/70 hover:text-white transition-colors" aria-label="Close menu">
         <i class="ph-light ph-x text-2xl"></i>
     </button>
-    <a href="index.html" class="text-center mb-12">
-        <span class="serif text-4xl text-white tracking-widest block">Sorella</span>
-        <span class="text-[10px] text-white/40 uppercase tracking-[0.4em] font-light mt-1 block">Est. 1881</span>
+    <a href="index.html" class="block text-center mb-12">
+        <img src="Photos%20Folder/logo/logowhite.png" alt="Sorella 1881" class="h-12 w-auto mx-auto">
     </a>
     <nav class="flex flex-col items-center gap-8">
         <a href="venue.html" class="text-white/60 text-xs uppercase tracking-[0.3em] hover:text-white transition-colors">The Venue</a>
@@ -310,12 +309,16 @@
             navbar.style.color = '#2C2C2C';
             navbar.style.paddingTop = '1rem';
             navbar.style.paddingBottom = '1rem';
+            document.getElementById('logo-white').style.opacity = '0';
+            document.getElementById('logo-brown').style.opacity = '1';
         } else {
             navbar.style.backgroundColor = 'transparent';
             navbar.style.boxShadow = 'none';
             navbar.style.color = 'white';
             navbar.style.paddingTop = '1.5rem';
             navbar.style.paddingBottom = '1.5rem';
+            document.getElementById('logo-white').style.opacity = '1';
+            document.getElementById('logo-brown').style.opacity = '0';
         }
     }
     window.addEventListener('scroll', updateNavbar);
