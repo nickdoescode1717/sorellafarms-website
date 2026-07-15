@@ -21,9 +21,6 @@
         #navbar { transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.3s ease, padding 0.3s ease; }
         #mobile-menu { transform: translateX(100%); transition: transform 0.4s ease; }
         #mobile-menu.open { transform: translateX(0); }
-        .package-card { border: 1px solid #e8e3dc; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
-        .package-card:hover { border-color: #9A8467; box-shadow: 0 8px 32px rgba(154,132,103,0.12); }
-        .package-card.featured { border-color: #9A8467; }
     </style>
 </head>
 <body>
@@ -171,115 +168,6 @@
                     <p class="text-xs font-light text-neutral-500 leading-relaxed">Chair arrangement, aisle preparation, and ceremony space styling included</p>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Package Tiers -->
-<section class="py-24 px-8 md:px-24 bg-[#FDFBF7]">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- Package 1 -->
-            <div class="package-card p-10 space-y-6">
-                <div>
-                    <span class="text-[#9A8467] text-[9px] uppercase tracking-[0.3em] font-semibold">Collection I</span>
-                    <h3 class="text-2xl serif font-light mt-2">The Garden</h3>
-                </div>
-                <p class="text-neutral-500 font-light text-sm leading-relaxed">
-                    An intimate, heartfelt celebration in one of the estate's garden settings. Perfect for couples who value connection over grandeur.
-                </p>
-                <div class="pt-2 space-y-3 text-sm text-neutral-600 font-light border-t border-[#e8e3dc] pt-6">
-                    <div class="flex justify-between">
-                        <span>Guests</span>
-                        <span class="font-medium text-[#2C2C2C]">Up to 80</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Spaces</span>
-                        <span class="font-medium text-[#2C2C2C]">Courtyard or Garden</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Duration</span>
-                        <span class="font-medium text-[#2C2C2C]">Full Day</span>
-                    </div>
-                </div>
-                <ul class="space-y-2 text-xs text-neutral-500 font-light">
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Exclusive estate access</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Ceremony setup & coordination</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Curated furnishings & lighting</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> 15+ photo locations</li>
-                </ul>
-                <a href="contact.html" class="text-[10px] uppercase tracking-widest font-semibold border-b border-[#9A8467] pb-1 hover:text-[#9A8467] transition-colors block">Inquire →</a>
-            </div>
-
-            <!-- Package 2 — Featured -->
-            <div class="package-card featured p-10 space-y-6 relative">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span class="bg-[#9A8467] text-white text-[9px] uppercase tracking-[0.2em] px-4 py-1.5">Most Requested</span>
-                </div>
-                <div>
-                    <span class="text-[#9A8467] text-[9px] uppercase tracking-[0.3em] font-semibold">Collection II</span>
-                    <h3 class="text-2xl serif font-light mt-2">The Estate</h3>
-                </div>
-                <p class="text-neutral-500 font-light text-sm leading-relaxed">
-                    The signature Sorella experience — an expansive, personalized celebration with full use of the estate's iconic spaces.
-                </p>
-                <div class="pt-2 space-y-3 text-sm text-neutral-600 font-light border-t border-[#e8e3dc] pt-6">
-                    <div class="flex justify-between">
-                        <span>Guests</span>
-                        <span class="font-medium text-[#2C2C2C]">Up to 160</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Spaces</span>
-                        <span class="font-medium text-[#2C2C2C]">Full Estate</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Duration</span>
-                        <span class="font-medium text-[#2C2C2C]">Full Day</span>
-                    </div>
-                </div>
-                <ul class="space-y-2 text-xs text-neutral-500 font-light">
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Everything in The Garden</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Courtyard + Barn access</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Blanc Marquee reception</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Cocktail Terrace & Meadow</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Extended catering options</li>
-                </ul>
-                <a href="contact.html" class="bg-[#9A8467] text-white text-[10px] uppercase tracking-widest px-6 py-3 hover:bg-[#867156] transition-colors block text-center">Inquire →</a>
-            </div>
-
-            <!-- Package 3 -->
-            <div class="package-card p-10 space-y-6">
-                <div>
-                    <span class="text-[#9A8467] text-[9px] uppercase tracking-[0.3em] font-semibold">Collection III</span>
-                    <h3 class="text-2xl serif font-light mt-2">The Grand Affair</h3>
-                </div>
-                <p class="text-neutral-500 font-light text-sm leading-relaxed">
-                    The ultimate Sorella experience — an immersive, multi-day celebration for the couple who wants every detail to be extraordinary.
-                </p>
-                <div class="pt-2 space-y-3 text-sm text-neutral-600 font-light border-t border-[#e8e3dc] pt-6">
-                    <div class="flex justify-between">
-                        <span>Guests</span>
-                        <span class="font-medium text-[#2C2C2C]">Up to 230</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Spaces</span>
-                        <span class="font-medium text-[#2C2C2C]">Full Estate + Marquee</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Duration</span>
-                        <span class="font-medium text-[#2C2C2C]">Multi-Day Available</span>
-                    </div>
-                </div>
-                <ul class="space-y-2 text-xs text-neutral-500 font-light">
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Everything in The Estate</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Ranch House accommodations</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Rehearsal dinner option</li>
-                    <li class="flex items-center gap-2"><i class="ph-light ph-check text-[#9A8467]"></i> Morning-after brunch</li>
-                </ul>
-                <a href="contact.html" class="text-[10px] uppercase tracking-widest font-semibold border-b border-[#9A8467] pb-1 hover:text-[#9A8467] transition-colors block">Inquire →</a>
-            </div>
-
         </div>
     </div>
 </section>
