@@ -1,1 +1,6 @@
 .claude/
+
+# Video files — too large for GitHub, upload directly to cPanel
+*.mov
+*.mp4
+*.webm
