@@ -70,7 +70,8 @@
     <!-- YouTube background video -->
     <div class="absolute inset-0 overflow-hidden" style="pointer-events: none;">
         <iframe
-            src="https://www.youtube.com/embed/fM0l-JMSqDc?autoplay=1&mute=1&loop=1&playlist=fM0l-JMSqDc&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&iv_load_policy=3&playsinline=1"
+            id="hero-video"
+            src="https://www.youtube.com/embed/fM0l-JMSqDc?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&origin=https://nickdoescode1717.github.io"
             title="Sorella 1881 estate cinematic background"
             frameborder="0"
             allow="autoplay; encrypted-media; picture-in-picture"
@@ -271,6 +272,25 @@
         </div>
     </div>
 </footer>
+
+<!-- YouTube IFrame API for seamless background video loop -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    let heroPlayer;
+    function onYouTubeIframeAPIReady() {
+        heroPlayer = new YT.Player('hero-video', {
+            events: {
+                onReady: (e) => e.target.mute(),
+                onStateChange: (e) => {
+                    if (e.data === YT.PlayerState.ENDED) {
+                        heroPlayer.seekTo(0);
+                        heroPlayer.playVideo();
+                    }
+                }
+            }
+        });
+    }
+</script>
 
 <script>
     const navbar = document.getElementById('navbar');
