@@ -88,7 +88,7 @@
 
 <!-- Page Header -->
 <header class="relative bg-[#2C2926] pt-20 pb-14 md:pt-36 md:pb-24 px-8 text-center text-white overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_702.jpg/screen.png'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_702.png'); background-size: cover; background-position: center;"></div>
     <div class="relative z-10">
         <p class="text-[10px] uppercase tracking-[0.55em] font-light mb-4 opacity-50">Sorella 1881</p>
         <h1 class="text-4xl md:text-6xl lg:text-7xl serif italic font-light">Inquire</h1>
@@ -154,44 +154,41 @@
 
             <!-- Right: Form -->
             <div class="md:col-span-3">
-                <form id="inquiry-form" class="space-y-10" action="https://api.web3forms.com/submit" method="POST">
+                <form id="inquiry-form" class="space-y-10" action="send-inquiry.php" method="POST">
 
-                    <!-- Web3Forms configuration -->
-                    <input type="hidden" name="access_key" value="a4824ea0-3b4f-4777-b64c-9fd178be8dc5">
-                    <input type="hidden" name="subject" value="New Wedding Inquiry — Sorella 1881">
-                    <input type="hidden" name="from_name" value="Sorella 1881 Website Inquiry">
+                    <!-- Honeypot: hidden from people, tempting to bots -->
                     <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div>
                             <label class="form-label" for="your-name">Your Name</label>
-                            <input type="text" id="your-name" name="Your Name" class="form-field" placeholder="First & last name" required>
+                            <input type="text" id="your-name" name="your-name" class="form-field" placeholder="First & last name" required>
                         </div>
                         <div>
                             <label class="form-label" for="partner-name">Partner's Name</label>
-                            <input type="text" id="partner-name" name="Partner's Name" class="form-field" placeholder="First & last name">
+                            <input type="text" id="partner-name" name="partner-name" class="form-field" placeholder="First & last name">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div>
                             <label class="form-label" for="email">Email Address</label>
-                            <input type="email" id="email" name="Email" class="form-field" placeholder="you@example.com" required>
+                            <input type="email" id="email" name="email" class="form-field" placeholder="you@example.com" required>
                         </div>
                         <div>
                             <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="Phone" class="form-field" placeholder="(000) 000-0000">
+                            <input type="tel" id="phone" name="phone" class="form-field" placeholder="(000) 000-0000">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div>
                             <label class="form-label" for="wedding-date">Estimated Wedding Date</label>
-                            <input type="text" id="wedding-date" name="Wedding Date" class="form-field" placeholder="Month & year">
+                            <input type="text" id="wedding-date" name="wedding-date" class="form-field" placeholder="Month & year">
                         </div>
                         <div>
                             <label class="form-label" for="guest-count">Estimated Guest Count</label>
-                            <select id="guest-count" name="Guest Count" class="form-field">
+                            <select id="guest-count" name="guest-count" class="form-field">
                                 <option value="" disabled selected>Select a range</option>
                                 <option value="Under 50 guests">Under 50 guests</option>
                                 <option value="50 – 80 guests">50 – 80 guests</option>
@@ -204,7 +201,7 @@
 
                     <div>
                         <label class="form-label" for="how-heard">How Did You Hear About Us?</label>
-                        <select id="how-heard" name="How They Heard About Us" class="form-field">
+                        <select id="how-heard" name="how-heard" class="form-field">
                             <option value="" disabled selected>Select an option</option>
                             <option value="Instagram">Instagram</option>
                             <option value="Google Search">Google Search</option>
@@ -217,7 +214,7 @@
 
                     <div>
                         <label class="form-label" for="message">Tell Us About Your Vision</label>
-                        <textarea id="message" name="Their Vision" class="form-field" rows="5" placeholder="Share anything about your wedding vision, the feeling you're hoping to create, or questions you have about the estate..."></textarea>
+                        <textarea id="message" name="message" class="form-field" rows="5" placeholder="Share anything about your wedding vision, the feeling you're hoping to create, or questions you have about the estate..."></textarea>
                     </div>
 
                     <div class="pt-2">
@@ -248,15 +245,15 @@
 <!-- Bottom Image Strip -->
 <section class="hidden md:grid grid-cols-3 h-64 overflow-hidden">
     <div class="overflow-hidden">
-        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_31.jpg/screen.png"
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_31.png"
              alt="Ceremony at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
     </div>
     <div class="overflow-hidden">
-        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_57.jpg/screen.png"
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_highlights_57.png"
              alt="Courtyard dining at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
     </div>
     <div class="overflow-hidden">
-        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1272.jpg/screen.png"
+        <img src="Photos%20Folder/stitch_sorella_1881_design_brief_plan/515_hj_1272.png"
              alt="Blanc Marquee at Sorella 1881" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
     </div>
 </section>
@@ -342,7 +339,7 @@
     closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-    // Inquiry form — Web3Forms AJAX submission
+    // Inquiry form — AJAX submission to send-inquiry.php (PHP mailer)
     const form = document.getElementById('inquiry-form');
     const submitBtn = document.getElementById('submit-btn');
     const successBox = document.getElementById('form-success');
